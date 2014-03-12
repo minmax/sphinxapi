@@ -103,38 +103,38 @@ class SphinxClient:
         """
         Create a new client object, and fill defaults.
         """
-        self._host = 'localhost'                   # searchd host (default is "localhost")
-        self._port = 9312                          # searchd port (default is 9312)
-        self._path = None                          # searchd unix-domain socket path
+        self._host = 'localhost'  # searchd host (default is "localhost")
+        self._port = 9312  # searchd port (default is 9312)
+        self._path = None  # searchd unix-domain socket path
         self._socket = None
-        self._offset = 0                             # how much records to seek from result-set start (default is 0)
-        self._limit = 20                            # how much records to return from result-set starting at offset (default is 20)
-        self._mode = SPH_MATCH_ALL                 # query matching mode (default is SPH_MATCH_ALL)
-        self._weights = []                            # per-field weights (default is 1 for all fields)
-        self._sort = SPH_SORT_RELEVANCE            # match sorting mode (default is SPH_SORT_RELEVANCE)
-        self._sortby = ''                            # attribute to sort by (default is "")
-        self._min_id = 0                             # min ID to match (default is 0)
-        self._max_id = 0                             # max ID to match (default is UINT_MAX)
-        self._filters = []                            # search filters
-        self._groupby = ''                            # group-by attribute name
-        self._groupfunc = SPH_GROUPBY_DAY               # group-by function (to pre-process group-by attribute value with)
-        self._groupsort = '@group desc'                 # group-by sorting clause (to sort groups in result set with)
-        self._groupdistinct = ''                            # group-by count-distinct attribute
-        self._maxmatches = 1000                          # max matches to retrieve
-        self._cutoff = 0                             # cutoff to stop searching at
-        self._retrycount = 0                             # distributed retry count
-        self._retrydelay = 0                             # distributed retry delay
-        self._anchor = {}                            # geographical anchor point
-        self._indexweights = {}                            # per-index weights
-        self._ranker = SPH_RANK_PROXIMITY_BM25       # ranking mode
-        self._maxquerytime = 0                             # max query time, milliseconds (default is 0, do not limit)
-        self._fieldweights = {}                            # per-field-name weights
-        self._overrides = {}                            # per-query attribute values overrides
-        self._select = '*'                           # select-list (attributes or expressions, with optional aliases)
+        self._offset = 0  # how much records to seek from result-set start (default is 0)
+        self._limit = 20  # how much records to return from result-set starting at offset (default is 20)
+        self._mode = SPH_MATCH_ALL  # query matching mode (default is SPH_MATCH_ALL)
+        self._weights = []  # per-field weights (default is 1 for all fields)
+        self._sort = SPH_SORT_RELEVANCE  # match sorting mode (default is SPH_SORT_RELEVANCE)
+        self._sortby = ''  # attribute to sort by (default is "")
+        self._min_id = 0  # min ID to match (default is 0)
+        self._max_id = 0  # max ID to match (default is UINT_MAX)
+        self._filters = []  # search filters
+        self._groupby = ''  # group-by attribute name
+        self._groupfunc = SPH_GROUPBY_DAY  # group-by function (to pre-process group-by attribute value with)
+        self._groupsort = '@group desc'  # group-by sorting clause (to sort groups in result set with)
+        self._groupdistinct = ''  # group-by count-distinct attribute
+        self._maxmatches = 1000  # max matches to retrieve
+        self._cutoff = 0  # cutoff to stop searching at
+        self._retrycount = 0  # distributed retry count
+        self._retrydelay = 0  # distributed retry delay
+        self._anchor = {}  # geographical anchor point
+        self._indexweights = {}  # per-index weights
+        self._ranker = SPH_RANK_PROXIMITY_BM25  # ranking mode
+        self._maxquerytime = 0  # max query time, milliseconds (default is 0, do not limit)
+        self._fieldweights = {}  # per-field-name weights
+        self._overrides = {}  # per-query attribute values overrides
+        self._select = '*'  # select-list (attributes or expressions, with optional aliases)
 
-        self._error = ''                            # last error message
-        self._warning = ''                            # last warning message
-        self._reqs = []                            # requests array for multi-query
+        self._error = ''  # last error message
+        self._warning = ''  # last warning message
+        self._reqs = []  # requests array for multi-query
 
     def __del__(self):
         if self._socket:
